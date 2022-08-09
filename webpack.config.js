@@ -5,7 +5,6 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    print: './src/print.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -19,7 +18,6 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/',
   },
   module: {
     rules: [
@@ -28,8 +26,5 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
     ],
-  },
-  optimization: {
-    runtimeChunk: 'single',
   },
 };
