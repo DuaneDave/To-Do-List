@@ -1,36 +1,30 @@
 // eslint-disable-next-line no-unused-vars
 import _ from 'lodash';
 import './style.css';
+import { addDeleteBtn, renderTodoList, todoList } from './Functionality.js';
 
-const todoList = [
-  {
-    id: 1,
-    description: 'Take out the trash',
-    completed: false,
-  },
-  {
-    id: 1,
-    description: 'Talk to some friends',
-    completed: false,
-  },
-  {
-    id: 1,
-    description: 'Clean the house',
-    completed: false,
-  },
-];
+const input = document.querySelector('input');
 
-const renderTodoList = () => {
-  const todoContainer = document.querySelector('.todo-container');
-  todoList.forEach((todo) => {
-    todoContainer.innerHTML += `
-    <div class="todo border-bottom flex">
-      <input class="box" type="checkbox" />
-      <input type="text" value="${todo.description}" />
-      <i class='bx bx-dots-vertical-rounded'></i>
-    </div>
-    `;
-  });
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (input.value !== '') {
+    renderTodoList();
+    addDeleteBtn();
+  }
+
+  input.value = '';
+});
+
+const loadTodo = () => {
+  const getTodos = JSON.parse(localStorage.getItem('todo'));
+  if (getTodos) {
+    getTodos.forEach((todo) => {
+      todoList.push(todo);
+      renderTodoList();
+    });
+  }
+  addDeleteBtn();
 };
-
-renderTodoList();
+loadTodo();
