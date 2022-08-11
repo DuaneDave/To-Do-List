@@ -2,15 +2,15 @@ import './style.css';
 import TodoArray from './modules/TodoArray.js';
 import TodoItem from './modules/TodoItem.js';
 
-const formSubmit = document.querySelector('#form');
-const todoElement = document.querySelector('.todo-container');
+const form = document.querySelector('#form');
+const todoWrapper = document.querySelector('.todo-container');
 
 const todoArray = new TodoArray();
 
 const renderTodos = () => {
-  todoElement.innerHTML = '';
+  todoWrapper.innerHTML = '';
   if (todoArray.getAllTodos().length === 0) {
-    todoElement.innerHTML = '<p class= "empty"> No todos yet</p>';
+    todoWrapper.innerHTML = '<p class= "empty">Todo is Empty</p>';
   } else {
     todoArray.getAllTodos().forEach((todo, index) => {
       const todoItem = document.createElement('div');
@@ -22,7 +22,7 @@ const renderTodos = () => {
         <i id="delete-btn" data-remote = ${index} class='bx bx-trash' id="delete-btn"></i>
       </div>
     `;
-      todoElement.appendChild(todoItem);
+      todoWrapper.appendChild(todoItem);
     });
   }
 
@@ -47,16 +47,16 @@ const renderTodos = () => {
   });
 };
 
-formSubmit.addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   const todoDescription = document.querySelector('.input').value;
   const todo = new TodoItem(
     todoDescription,
     false,
-    todoArray.getAllTodos().length + 1,
+    todoArray.getAllTodos().length + 1
   );
   todoArray.addTodo(todo);
-  formSubmit.reset();
+  form.reset();
   document.querySelector('.input').focus();
   renderTodos();
 });
