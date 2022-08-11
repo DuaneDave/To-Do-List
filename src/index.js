@@ -2,7 +2,7 @@ import './style.css';
 import TodoArray from './modules/TodoArray.js';
 import TodoItem from './modules/TodoItem.js';
 
-const form = document.querySelector('#form');
+const form = document.querySelector('form');
 const todoWrapper = document.querySelector('.todo-container');
 
 const todoArray = new TodoArray();
@@ -10,7 +10,7 @@ const todoArray = new TodoArray();
 const renderTodos = () => {
   todoWrapper.innerHTML = '';
   if (todoArray.getAllTodos().length === 0) {
-    todoWrapper.innerHTML = '<p class= "empty">Todo is Empty</p>';
+    todoWrapper.innerHTML = '<h3 class= "alert">Todo is Empty</h3>';
   } else {
     todoArray.getAllTodos().forEach((todo, index) => {
       const todoItem = document.createElement('div');

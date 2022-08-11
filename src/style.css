@@ -88,14 +88,14 @@ form {
   color: rgb(82, 77, 77);
 }
 
-.clear button {
+.clear-todos button {
   border: none;
   width: 100%;
   padding: 1.4em 0;
   background-color: rgba(190, 181, 181, 0.308);
 }
 
-.empty {
+.alert {
   text-align: center;
   color: rgba(34, 30, 30, 0.144);
   padding: 0.2em;
