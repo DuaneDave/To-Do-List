@@ -1,7 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import _ from 'lodash';
 import './style.css';
-import { addDeleteBtn, renderTodoList, todoList } from './Functionality.js';
+import {
+  addDeleteBtn,
+  editTodo,
+  renderTodoList,
+  todoList,
+} from './Functionality.js';
 
 const input = document.querySelector('input');
 
@@ -12,6 +17,7 @@ form.addEventListener('submit', (e) => {
   if (input.value !== '') {
     renderTodoList();
     addDeleteBtn();
+    editTodo();
   }
 
   input.value = '';
@@ -26,5 +32,6 @@ const loadTodo = () => {
     });
   }
   addDeleteBtn();
+  editTodo();
 };
 loadTodo();

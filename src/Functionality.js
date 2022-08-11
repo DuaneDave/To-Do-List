@@ -19,16 +19,42 @@ const renderTodoList = () => {
   list.classList.add('todo');
   list.classList.add('border-bottom');
   list.classList.add('flex');
-  todoList.forEach((todo) => {
+  todoList.forEach((todo, index) => {
     list.innerHTML = `
     <input class="box" type="checkbox" />
-    <input type="text" value="${todo.text}" />
+    <input  data-input="${index}" class="input-item" type="text" value="${todo.text}" id="${todo.id}" />
     <i class='bx bx-trash' id="${todo.id}"></i>
   `;
 
+    const editTodo = document.querySelectorAll('.input-item');
+    editTodo.forEach((todo) => {
+      todo.addEventListener('keyup', (e) => {
+        const id = e.target.dataset.input;
+        const description = e.target.value;
+        todoList[id].text = description;
+        saveTodo();
+      });
+    });
     todoContainer.appendChild(list);
   });
   saveTodo();
+};
+
+const editTodo = (e) => {
+  e.preventDefault();
+  const editTodo = document.querySelectorAll('.input-item');
+  editTodo.forEach((todo) => {
+    todo.addEventListener('keyup', (e) => {
+      const { id } = e.target;
+      const desciption = e.target.value;
+      todoList.forEach((item) => {
+        if (item.id === id) {
+          item.text = desciption;
+        }
+      });
+      saveTodo();
+    });
+  });
 };
 
 const removeTodo = (e) => {
@@ -61,5 +87,9 @@ const addDeleteBtn = () => {
 };
 
 export {
-  renderTodoList, removeTodo, addDeleteBtn, todoList,
+  renderTodoList,
+  removeTodo,
+  addDeleteBtn,
+  todoList,
+  editTodo,
 };
