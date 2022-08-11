@@ -12,14 +12,14 @@ const renderTodos = () => {
   if (todoArray.getAllTodos().length === 0) {
     todoWrapper.innerHTML = '<h3 class= "alert">Todo is Empty</h3>';
   } else {
-    todoArray.getAllTodos().forEach((todo, index) => {
+    todoArray.getAllTodos().forEach((todo, id) => {
       const todoItem = document.createElement('div');
       todoItem.classList.add('todo-item');
       todoItem.innerHTML = `
-      <div data-check = ${index} class="todo border-bottom flex">
+      <div data-check = ${id} class="todo border-bottom flex">
         <input class="box" type="checkbox" />
         <input data-item = ${todo.id} class="todo-item" type="text" value="${todo.description}" />
-        <i id="delete-btn" data-remote = ${index} class='bx bx-trash' id="delete-btn"></i>
+        <i id="delete-btn" data-remote = ${id} class='bx bx-trash' id="delete-btn"></i>
       </div>
     `;
       todoWrapper.appendChild(todoItem);
