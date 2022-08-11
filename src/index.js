@@ -3,7 +3,6 @@ import TodoArray from './modules/TodoArray.js';
 import TodoItem from './modules/TodoItem.js';
 
 const formSubmit = document.querySelector('#form');
-const clear = document.querySelector('#remove');
 const todoElement = document.querySelector('.todo-container');
 
 const todoArray = new TodoArray();
@@ -46,12 +45,6 @@ const renderTodos = () => {
       todoArray.updateTodo(id, newTodo);
     });
   });
-
-  const clearAllTodos = () => {
-    todoArray.clearAllTodos();
-    renderTodos();
-  };
-  clear.addEventListener('click', clearAllTodos);
 };
 
 formSubmit.addEventListener('submit', (e) => {

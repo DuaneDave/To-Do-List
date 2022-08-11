@@ -18,18 +18,13 @@ class TodoArray {
 
   deleteTodo(index) {
     if (this.todos.length === 1) {
-      this.clearAllTodos();
+      this.todos = [];
     } else {
       this.todos.splice(index, 1);
     }
     for (let i = 0; i < this.todos.length; i += 1) {
       this.todos[i].id = i + 1;
     }
-    localStorage.setItem('todos', JSON.stringify(this.todos));
-  }
-
-  clearAllTodos() {
-    this.todos = [];
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
