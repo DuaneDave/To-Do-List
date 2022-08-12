@@ -31,6 +31,23 @@ class TodoArray {
   getAllTodos() {
     return this.todos;
   }
+
+  toggleCompleted(index) {
+    this.todos[index - 1].completed = !this.todos[index - 1].completed;
+    for (let i = 0; i < this.todos.length; i += 1) {
+      this.todos[i].id = i + 1;
+    }
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
+  clearCompleted() {
+    const newArr = this.todos.filter((todo) => !todo.completed);
+    this.todos = newArr;
+    for (let i = 0; i < this.todos.length; i += 1) {
+      this.todos[i].id = i + 1;
+    }
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
 }
 
 export default TodoArray;

@@ -32,6 +32,7 @@ h1 {
 i {
   font-size: 1.2rem;
   color: rgb(116, 110, 110);
+  cursor: pointer;
 }
 
 input {
@@ -63,7 +64,7 @@ form {
   padding-right: 0.8em;
 }
 
-.enter-text {
+form input {
   font-style: italic;
 }
 
@@ -79,7 +80,8 @@ form {
   height: 15px;
   position: absolute;
   left: 3%;
-  z-index: 7;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .todo input {
@@ -91,8 +93,15 @@ form {
 .clear-todos button {
   border: none;
   width: 100%;
-  padding: 1.4em 0;
+  padding: 1.3em 0;
   background-color: rgba(190, 181, 181, 0.308);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.clear-todos button:active {
+  transform: scaleY(0.98);
+  background-color: rgba(190, 181, 181, 0.575);
 }
 
 .alert {
@@ -101,4 +110,9 @@ form {
   padding: 0.2em;
   font-size: 2.5rem;
   font-weight: 700;
+}
+
+.checked {
+  text-decoration: line-through;
+  font-style: italic;
 }
