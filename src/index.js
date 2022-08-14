@@ -8,6 +8,21 @@ const removeCompleted = document.querySelector('button');
 
 const todoArray = new TodoArray();
 
+const popUp = () => {
+  const popUp = document.querySelector('#clear-completed');
+  popUp.innerHTML = `
+  <div class="clear-completed">
+  <i class="bx bx-trash"></i>
+  <h3>All completed todos are removed</h3>
+  </div>
+  `;
+
+  setTimeout(() => {
+    popUp.remove()
+  }, 1500)
+};
+
+
 const renderTodos = () => {
   todoWrapper.innerHTML = '';
   if (todoArray.getAllTodos().length === 0) {
@@ -23,7 +38,7 @@ const renderTodos = () => {
       todoItem.innerHTML = `
         <div data-check = ${index} class="todo border-bottom flex">
         <input data-complete = ${todo.id} class="box" ${todoStatus()} type="checkbox" />
-        <input data-item = ${todo.id} class="item ${todoStatus()}" type="text" value="${todo.description}" />
+        <input data-item = ${ todo.id} class="item ${todoStatus()}" type="text" value="${todo.description}" />
         <i id="delete-btn" data-remote = ${index} class='bx bx-trash' id="delete-btn"></i>
         </div>
       `;
@@ -73,6 +88,7 @@ const renderTodos = () => {
   removeCompleted.addEventListener('click', () => {
     todoArray.clearCompleted();
     renderTodos();
+    popUp();
   });
 };
 
@@ -82,7 +98,7 @@ form.addEventListener('submit', (e) => {
   const todo = new TodoItem(
     todoText,
     false,
-    todoArray.getAllTodos().length + 1,
+    todoArray.getAllTodos().length + 1
   );
   todoArray.addTodo(todo);
   form.reset();
