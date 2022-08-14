@@ -19,7 +19,7 @@ const popUp = () => {
 
   setTimeout(() => {
     popUp.remove();
-  }, 1500)
+  }, 1500);
 };
 
 
