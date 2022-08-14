@@ -37,7 +37,7 @@ const renderTodos = () => {
       todoItem.innerHTML = `
         <div data-check = ${index} class="todo border-bottom flex">
         <input data-complete = ${todo.id} class="box" ${todoStatus()} type="checkbox" />
-        <input data-item = ${ todo.id} class="item ${todoStatus()}" type="text" value="${todo.description}" />
+        <input data-item = ${todo.id} class="item ${todoStatus()}" type="text" value="${todo.description}" />
         <i id="delete-btn" data-remote = ${index} class='bx bx-trash' id="delete-btn"></i>
         </div>
       `;
