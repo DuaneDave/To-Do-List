@@ -97,7 +97,7 @@ form.addEventListener('submit', (e) => {
   const todo = new TodoItem(
     todoText,
     false,
-    todoArray.getAllTodos().length + 1
+    todoArray.getAllTodos().length + 1,
   );
   todoArray.addTodo(todo);
   form.reset();
