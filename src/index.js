@@ -22,7 +22,6 @@ const popUp = () => {
   }, 1500);
 };
 
-
 const renderTodos = () => {
   todoWrapper.innerHTML = '';
   if (todoArray.getAllTodos().length === 0) {
