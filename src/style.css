@@ -14,11 +14,16 @@ body {
   height: 100vh;
   width: 100vw;
   padding: 1em;
+  background:
+    radial-gradient (circle,
+    rgba(250, 248, 248, 0.671),
+    rgba(111, 218, 24, 0.082)
+  );
 }
 
 h1 {
   font-size: 1.5rem;
-  color: rgb(27, 25, 25);
+  color: rgba(111, 218, 24, 0.801);
 }
 
 .flex {
@@ -26,7 +31,7 @@ h1 {
 }
 
 .border-bottom {
-  border-bottom: 1px solid rgba(105, 100, 100, 0.575);
+  border-bottom: 1px solid #58ac1459;
 }
 
 i {
@@ -46,11 +51,14 @@ input {
 
 .container {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
+  background-color: white;
+  border: 1px solid #58ac1470;
   box-shadow:
-    3px 10px 10px rgba(75, 72, 72, 0.219),
+    3px 10px 10px rgba(75, 72, 72, 0.377),
     -5px 0 7px rgba(75, 72, 72, 0.219);
   gap: 0.5rem;
+  border-radius: 5px;
 }
 
 .header {
@@ -87,26 +95,28 @@ form input {
 .todo input {
   width: 90%;
   padding-left: 2.5rem;
-  color: rgb(82, 77, 77);
+  color: rgb(74, 148, 14);
 }
 
 .clear-todos button {
   border: none;
   width: 100%;
-  padding: 1.3em 0;
-  background-color: rgba(190, 181, 181, 0.308);
+  padding: 1.1em 0;
+  color: #696565;
+  background-color: rgba(111, 218, 24, 0.555);
   font-weight: 400;
   font-size: 1rem;
+  border-radius: 5px;
 }
 
 .clear-todos button:active {
   transform: scaleY(0.98);
-  background-color: rgba(190, 181, 181, 0.575);
+  background-color: rgba(64, 131, 9, 0.63);
 }
 
 .alert {
   text-align: center;
-  color: rgba(34, 30, 30, 0.144);
+  color: rgba(101, 206, 16, 0.151);
   padding: 0.2em;
   font-size: 2.5rem;
   font-weight: 700;
@@ -115,4 +125,34 @@ form input {
 .checked {
   text-decoration: line-through;
   font-style: italic;
+}
+
+#clear-completed {
+  position: fixed;
+  top: 5%;
+  right: -100%;
+  background-color: rgba(141, 219, 15, 0.315);
+  border: 2px solid rgba(114, 209, 36, 0.829);
+  width: 300px;
+  transition: 0.5s ease-in-out;
+}
+
+#clear-completed.active {
+  right: 5%;
+}
+
+.clear-completed {
+  font-size: 0.8rem;
+  padding: 1em;
+  color: #756d6d;
+  align-items: center;
+}
+
+.clear-completed .bx-trash {
+  font-size: 1.5rem;
+  color: rgb(160, 150, 150);
+  border: 1px solid rgb(167, 159, 159);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-right: 1rem;
 }

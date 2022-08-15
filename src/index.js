@@ -8,6 +8,15 @@ const removeCompleted = document.querySelector('button');
 
 const todoArray = new TodoArray();
 
+const popUp = () => {
+  const popUp = document.querySelector('#clear-completed');
+  popUp.classList.add('active');
+
+  setTimeout(() => {
+    popUp.classList.remove('active');
+  }, 2500);
+};
+
 const renderTodos = () => {
   todoWrapper.innerHTML = '';
   if (todoArray.getAllTodos().length === 0) {
@@ -43,7 +52,7 @@ const renderTodos = () => {
   const editTodo = document.querySelectorAll('.todo-item');
   const checkedBox = document.querySelectorAll('.box');
   editTodo.forEach((todo) => {
-    todo.addEventListener('blur', (e) => {
+    todo.addEventListener('keyup', (e) => {
       const { dataset, value } = e.target;
       const id = dataset.item;
       const description = value.trim();
@@ -73,6 +82,7 @@ const renderTodos = () => {
   removeCompleted.addEventListener('click', () => {
     todoArray.clearCompleted();
     renderTodos();
+    popUp();
   });
 };
 
