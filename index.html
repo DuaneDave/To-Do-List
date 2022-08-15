@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Todo-List</title>
+  <script defer src="index.bundle.js"></script></head>
+  <body>
+    <div class="container">
+      <div class="header border-bottom flex">
+        <h1>Today's to do</h1>
+        <i class="bx bx-refresh"></i>
+      </div>
+      <form class="flex border-bottom">
+        <input
+          class="input enter-text"
+          type="text"
+          name="todo"
+          placeholder="Add a todo...."
+        />
+        <i class="bx bx-subdirectory-left"></i>
+      </form>
+      <div class="todo-container"></div>
+      <div class="clear-todos">
+        <button type="button">Clear All Completed</button>
+      </div>
+    </div>
+    <div id="clear-completed">
+      <div class="clear-completed flex">
+        <i class="bx bx-trash"></i>
+        <h3>All completed todos are removed</h3>
+      </div>
+    </div>
+  </body>
+</html>
