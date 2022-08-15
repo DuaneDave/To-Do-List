@@ -14,7 +14,11 @@ body {
   height: 100vh;
   width: 100vw;
   padding: 1em;
-  background: radial-gradient(circle, rgba(250, 248, 248, 0.671), rgba(111, 218, 24, 0.082));
+  background:
+    radial-gradient (circle,
+    rgba(250, 248, 248, 0.671),
+    rgba(111, 218, 24, 0.082)
+  );
 }
 
 h1 {
@@ -123,15 +127,32 @@ form input {
   font-style: italic;
 }
 
-.clear-completed {
+#clear-completed {
   position: fixed;
   top: 5%;
-  right: 5%;
-  font-size: 0.8rem;
-  background-color: rgba(111, 218, 24, 0.384);
+  right: -100%;
+  background-color: rgba(141, 219, 15, 0.315);
   border: 2px solid rgba(114, 209, 36, 0.829);
-  border-radius: 10px;
+  width: 300px;
+  transition: 0.5s ease-in-out;
+}
+
+#clear-completed.active {
+  right: 5%;
+}
+
+.clear-completed {
+  font-size: 0.8rem;
   padding: 1em;
-  color: #4d4949;
+  color: #756d6d;
   align-items: center;
+}
+
+.clear-completed .bx-trash {
+  font-size: 1.5rem;
+  color: rgb(160, 150, 150);
+  border: 1px solid rgb(167, 159, 159);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-right: 1rem;
 }

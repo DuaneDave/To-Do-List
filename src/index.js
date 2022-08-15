@@ -10,16 +10,11 @@ const todoArray = new TodoArray();
 
 const popUp = () => {
   const popUp = document.querySelector('#clear-completed');
-  popUp.innerHTML = `
-  <div class="clear-completed">
-  <i class="bx bx-trash"></i>
-  <h3>All completed todos are removed</h3>
-  </div>
-  `;
+  popUp.classList.add('active');
 
   setTimeout(() => {
-    popUp.remove();
-  }, 1500);
+    popUp.classList.remove('active');
+  }, 2500);
 };
 
 const renderTodos = () => {
@@ -57,7 +52,7 @@ const renderTodos = () => {
   const editTodo = document.querySelectorAll('.todo-item');
   const checkedBox = document.querySelectorAll('.box');
   editTodo.forEach((todo) => {
-    todo.addEventListener('blur', (e) => {
+    todo.addEventListener('keyup', (e) => {
       const { dataset, value } = e.target;
       const id = dataset.item;
       const description = value.trim();
