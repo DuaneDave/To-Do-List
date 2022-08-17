@@ -34,4 +34,17 @@ beforeAll(() => {
   renderTodos();
 });
 
+describe('Test add and remove functions', () => {
+  test('should add an item to array', () => {
+    const newArr = new TodoItem(
+      'Blue',
+      false,
+      todoArray.getAllTodos().length + 1,
+    );
+    todoArray.addTodo(newArr);
+    renderTodos();
+    expect(todoArray.getAllTodos().length).toEqual(3);
+  });
 
+
+});
