@@ -60,4 +60,4 @@ describe('Test add and remove functions', () => {
       expect(child.length).toEqual(2);
     });
   });
-})
+});
