@@ -46,5 +46,13 @@ describe('Test add and remove functions', () => {
     expect(todoArray.getAllTodos().length).toEqual(3);
   });
 
+  describe('Test deleteTodo', () => {
+    test('should remove a single item from array', () => {
+      todoArray.deleteTodo(1);
+      renderTodos();
+      expect(todoArray.getAllTodos().length).toEqual(2);
+    });
+  });
+
 
 });
