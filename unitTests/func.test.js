@@ -54,5 +54,10 @@ describe('Test add and remove functions', () => {
     });
   });
 
-
+  describe('Check the Dom', () => {
+    test('Should remove element from DOM', () => {
+      const child = document.querySelectorAll('li');
+      expect(child.length).toEqual(2);
+    });
+  });
 });
