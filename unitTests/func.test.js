@@ -74,4 +74,12 @@ describe('Test add and remove functions', () => {
       expect(todoArray.getAllTodos()[0].description).toEqual('testing');
     });
   });
+
+  describe('Test toggleCompleted', () => {
+    test('should clear all todos', () => {
+      todoArray.toggleCompleted(1);
+      renderTodos();
+      expect(todoArray.getAllTodos()[0].completed).toEqual(true);
+    });
+  });
 });
