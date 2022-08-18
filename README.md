@@ -25,13 +25,21 @@ To run tests on this project if you tweaked something, run the following command
 - run your test using npm run test
 
 
-## Authors
+## Authors 1
 
 👤 **Obiebi Okiemute David**
 
 - GitHub: [@githubhandle](https://github.com/DuaneDave)
 - Twitter: [@twitterhandle](https://twitter.com/dave_duane)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/okiemute-david-obiebi-6b4a6a230/)
+
+## Authors 2
+
+👤 **SOULEMANOU KUNCHIEFUH BABANOU**
+
+- GitHub: [@githubhandle](https://github.com/soulemanou-software)
+- Twitter: [@twitterhandle](https://twitter.com/fastdevz1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/soulemanou-kunchiefuh-babanou-454099196/)
 
 ## 🤝 Contributing
 
