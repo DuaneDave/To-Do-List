@@ -9,11 +9,21 @@
 - Css
 - Webpack
 - Webpack-dev server
+- Jest
 
 ## To get a local copy up and running follow these simple example steps.
 
 - Clone this repo to your machine by using Git clone: Git clone https://github.com/DuaneDave/To-Do-List.git
-- open in your vs code terminal and run live server
+- open in your vs code terminal and run live 
+
+
+### Run tests
+To run tests on this project if you tweaked something, run the following command
+
+- Install jest using npm i --save-dev jest
+- Install jsDom using npm install --save-dev jest-environment-jsdom-global jest-environment-jsdom
+- run your test using npm run test
+
 
 ## Authors
 
@@ -41,4 +51,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is not licensed.
+This project is licensed by MIT.
