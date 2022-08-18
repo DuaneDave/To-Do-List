@@ -90,4 +90,4 @@ describe('Test add and remove functions', () => {
       expect(todoArray.getAllTodos().length).toEqual(1);
     });
   });
-});
+})
