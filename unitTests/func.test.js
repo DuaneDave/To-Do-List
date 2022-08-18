@@ -39,7 +39,7 @@ describe('Test add and remove functions', () => {
     const newArr = new TodoItem(
       'Blue',
       false,
-      todoArray.getAllTodos().length + 1,
+      todoArray.getAllTodos().length + 1
     );
     todoArray.addTodo(newArr);
     renderTodos();
@@ -58,6 +58,20 @@ describe('Test add and remove functions', () => {
     test('Should remove element from DOM', () => {
       const child = document.querySelectorAll('li');
       expect(child.length).toEqual(2);
+    });
+  });
+
+  describe('Test updateTodo', () => {
+    test('should update todo item', () => {
+      const update = {
+        id: 1,
+        description: 'testing',
+        completed: false,
+      };
+
+      todoArray.updateTodo(1, update);
+      renderTodos();
+      expect(todoArray.getAllTodos()[0].description).toEqual('testing');
     });
   });
 });

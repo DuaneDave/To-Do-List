@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">96.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/28</span>
+                <span class='fraction'>27/28</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.13% </span>
+                <span class="strong">95.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/23</span>
+                <span class='fraction'>22/23</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -127,11 +127,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,24 +147,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,12 +179,12 @@
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  up</span>dateTodo(id, newTodo) {
-<span class="cstat-no" title="statement not covered" >    this.todos[id - 1] = newTodo;</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; this.todos.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >      this.todos[i].id = i + 1;</span>
+  updateTodo(id, newTodo) {
+    this.todos[id - 1] = newTodo;
+    for (let i = 0; i &lt; this.todos.length; i += 1) {
+      this.todos[i].id = i + 1;
     }
-<span class="cstat-no" title="statement not covered" >    localStorage.setItem('todos', JSON.stringify(this.todos));</span>
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 &nbsp;
   deleteTodo(index) {
@@ -203,21 +203,21 @@
     return this.todos;
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  to</span>ggleCompleted(index) {
-<span class="cstat-no" title="statement not covered" >    this.todos[index - 1].completed = !this.todos[index - 1].completed;</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; this.todos.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >      this.todos[i].id = i + 1;</span>
+  toggleCompleted(index) {
+    this.todos[index - 1].completed = !this.todos[index - 1].completed;
+    for (let i = 0; i &lt; this.todos.length; i += 1) {
+      this.todos[i].id = i + 1;
     }
-<span class="cstat-no" title="statement not covered" >    localStorage.setItem('todos', JSON.stringify(this.todos));</span>
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  cl</span>earCompleted() {
-    const newArr = <span class="cstat-no" title="statement not covered" >this.todos.filter(<span class="fstat-no" title="function not covered" >(t</span>odo) =&gt; <span class="cstat-no" title="statement not covered" >!todo.completed)</span>;</span>
-<span class="cstat-no" title="statement not covered" >    this.todos = newArr;</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; this.todos.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >      this.todos[i].id = i + 1;</span>
+  clearCompleted() {
+    const newArr = this.todos.filter((todo) =&gt; !todo.completed);
+    this.todos = newArr;
+    for (let i = 0; i &lt; this.todos.length; i += 1) {
+      this.todos[i].id = i + 1;
     }
-<span class="cstat-no" title="statement not covered" >    localStorage.setItem('todos', JSON.stringify(this.todos));</span>
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 }
 &nbsp;
@@ -229,7 +229,7 @@ export default TodoArray;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-17T15:37:19.749Z
+                at 2022-08-18T09:50:22.699Z
             </div>
         <script src="prettify.js"></script>
         <script>
