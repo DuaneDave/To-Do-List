@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660816222848" clover="3.2.0">
-  <project timestamp="1660816222849" name="All files">
+<coverage generated="1660816435429" clover="3.2.0">
+  <project timestamp="1660816435429" name="All files">
     <metrics statements="26" coveredstatements="25" conditionals="4" coveredconditionals="3" methods="9" coveredmethods="9" elements="39" coveredelements="37" complexity="0" loc="26" ncloc="26" packages="1" files="2" classes="2"/>
     <file name="TodoArray.js" path="C:\Users\Duane David\Desktop\Microverse Projects\To-Do-List\src\modules\TodoArray.js">
       <metrics statements="23" coveredstatements="22" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="8"/>

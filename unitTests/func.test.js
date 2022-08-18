@@ -39,7 +39,7 @@ describe('Test add and remove functions', () => {
     const newArr = new TodoItem(
       'Blue',
       false,
-      todoArray.getAllTodos().length + 1
+      todoArray.getAllTodos().length + 1,
     );
     todoArray.addTodo(newArr);
     renderTodos();
