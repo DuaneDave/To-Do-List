@@ -60,4 +60,34 @@ describe('Test add and remove functions', () => {
       expect(child.length).toEqual(2);
     });
   });
+
+  describe('Test updateTodo', () => {
+    test('should update todo item', () => {
+      const update = {
+        id: 1,
+        description: 'testing',
+        completed: false,
+      };
+
+      todoArray.updateTodo(1, update);
+      renderTodos();
+      expect(todoArray.getAllTodos()[0].description).toEqual('testing');
+    });
+  });
+
+  describe('Test toggleCompleted', () => {
+    test('should clear all todos', () => {
+      todoArray.toggleCompleted(1);
+      renderTodos();
+      expect(todoArray.getAllTodos()[0].completed).toEqual(true);
+    });
+  });
+
+  describe('Test clear all completed', () => {
+    test('should clear all todos', () => {
+      todoArray.clearCompleted();
+      renderTodos();
+      expect(todoArray.getAllTodos().length).toEqual(1);
+    });
+  });
 });
