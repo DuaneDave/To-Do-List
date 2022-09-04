@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
 # Todo-List
 
 > This an CRUD app built were users can create, update and delete specific day to day tasks as they wish. The app is built using webpack and served with webpack dev server.
@@ -61,4 +63,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is licensed by MIT.
+This project is licensed by [MIT](./LICENSE).
