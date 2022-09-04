@@ -2,6 +2,8 @@
 
 > This an CRUD app built were users can create, update and delete specific day to day tasks as they wish. The app is built using webpack and served with webpack dev server
 
+![screenshot](./src/asset/img1.png)
+
 ## Built With
 
 - HTML
@@ -13,7 +15,7 @@
 
 ## To get a local copy up and running follow these simple example steps.
 
-- Clone this repo to your machine by using Git clone: Git clone https://github.com/DuaneDave/To-Do-List.git
+- Clone this repo to your machine by using Git clone: Git clone `https://github.com/DuaneDave/To-Do-List.git`
 - open in your vs code terminal and run live 
 
 
