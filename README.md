@@ -24,9 +24,9 @@
 ### Run tests
 To run tests on this project if you tweaked something, run the following command
 
-- Install jest using npm i --save-dev jest
-- Install jsDom using npm install --save-dev jest-environment-jsdom-global jest-environment-jsdom
-- run your test using npm run test
+- Install jest using `npm i --save-dev jest`
+- Install jsDom using `npm install --save-dev jest-environment-jsdom-global jest-environment-jsdom`
+- run your test using `npm run test`
 
 
 ## Authors 1
