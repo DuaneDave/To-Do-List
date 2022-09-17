@@ -26,12 +26,13 @@ h1 {
   color: rgba(111, 218, 24, 0.801);
 }
 
-.flex {
-  display: flex;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #58ac1459;
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1em;
+  position: relative;
+  font-size: 1rem;
 }
 
 i {
@@ -40,13 +41,17 @@ i {
   cursor: pointer;
 }
 
-input {
-  width: 100%;
+.flex {
+  display: flex;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #58ac1459;
+}
+
+.submit {
+  background: none;
   border: none;
-  outline: none;
-  padding: 1em;
-  position: relative;
-  font-size: 1rem;
 }
 
 .container {
