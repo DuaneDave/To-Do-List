@@ -23,13 +23,13 @@ body {
 
 h1 {
   font-size: 9rem;
-  color: rgba(111, 218, 24, 0.11);
+  color: rgba(212, 231, 195, 0.247);
   margin-top: 4rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  color: #ccc;
+  color: rgba(111, 218, 24, 0.801);
 }
 
 input {
