@@ -9,21 +9,42 @@
 body {
   font-family: 'Sora', sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
   width: 100vw;
   padding: 1em;
+  user-select: none;
   background:
-    radial-gradient (circle,
-    rgba(250, 248, 248, 0.671),
-    rgba(111, 218, 24, 0.082)
-  );
+    radial-gradient
+    (circle,
+    rgba(250, 248, 248, 0.671), rgba(111, 218, 24, 0.082));
 }
 
 h1 {
+  font-size: 9rem;
+  color: rgba(212, 231, 195, 0.247);
+  margin-top: 4rem;
+}
+
+h2 {
   font-size: 1.5rem;
   color: rgba(111, 218, 24, 0.801);
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1em;
+  position: relative;
+  font-size: 1rem;
+}
+
+i {
+  font-size: 1.2rem;
+  color: rgb(116, 110, 110);
+  cursor: pointer;
 }
 
 .flex {
@@ -34,19 +55,9 @@ h1 {
   border-bottom: 1px solid #58ac1459;
 }
 
-i {
-  font-size: 1.2rem;
-  color: rgb(116, 110, 110);
-  cursor: pointer;
-}
-
-input {
-  width: 100%;
+.submit {
+  background: none;
   border: none;
-  outline: none;
-  padding: 1em;
-  position: relative;
-  font-size: 1rem;
 }
 
 .container {

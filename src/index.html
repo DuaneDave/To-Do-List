@@ -11,9 +11,10 @@
     <title>Todo-List</title>
   </head>
   <body>
-    <div class="container">
+    <h1>todo</h1>
+    <section class="container">
       <div class="header border-bottom flex">
-        <h1>Today's to do</h1>
+        <h2>Today's to do</h2>
         <i class="bx bx-refresh"></i>
       </div>
       <form class="flex border-bottom">
@@ -22,19 +23,22 @@
           type="text"
           name="todo"
           placeholder="Add a todo...."
+          aria-label="Add a todo"
         />
-        <i class="bx bx-subdirectory-left"></i>
+        <button type="submit" class="submit">
+          <i class="bx bx-subdirectory-left"></i>
+        </button>
       </form>
       <div class="todo-container"></div>
       <div class="clear-todos">
-        <button type="button">Clear All Completed</button>
+        <button type="button" id="clear-all">Clear All Completed</button>
       </div>
-    </div>
-    <div id="clear-completed">
+    </section>
+    <section id="clear-completed">
       <div class="clear-completed flex">
-        <i class="bx bx-trash"></i>
+        <i class="bx bx-trash" aria-label="delete todo"></i>
         <h3>All completed todos are removed</h3>
       </div>
-    </div>
+    </section>
   </body>
 </html>
