@@ -1,21 +1,13 @@
 import './style.css';
 import TodoArray from './modules/TodoArray.js';
 import TodoItem from './modules/TodoItem.js';
+import popUp from './modules/toast.js';
 
 const form = document.querySelector('form');
 const todoWrapper = document.querySelector('.todo-container');
 const removeCompleted = document.querySelector('button');
 
 const todoArray = new TodoArray();
-
-const popUp = () => {
-  const popUp = document.querySelector('#clear-completed');
-  popUp.classList.add('active');
-
-  setTimeout(() => {
-    popUp.classList.remove('active');
-  }, 2500);
-};
 
 const renderTodos = () => {
   todoWrapper.innerHTML = '';
