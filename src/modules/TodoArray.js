@@ -3,6 +3,13 @@ class TodoArray {
     this.todos = JSON.parse(localStorage.getItem('todos')) || [];
   }
 
+  reShuffle() {
+    for (let i = 0; i < this.todos.length; i += 1) {
+      this.todos[i].id = i + 1;
+    }
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
   addTodo(todo) {
     this.todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(this.todos));
@@ -10,10 +17,7 @@ class TodoArray {
 
   updateTodo(id, newTodo) {
     this.todos[id - 1] = newTodo;
-    for (let i = 0; i < this.todos.length; i += 1) {
-      this.todos[i].id = i + 1;
-    }
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.reShuffle();
   }
 
   deleteTodo(index) {
@@ -22,10 +26,7 @@ class TodoArray {
     } else {
       this.todos.splice(index, 1);
     }
-    for (let i = 0; i < this.todos.length; i += 1) {
-      this.todos[i].id = i + 1;
-    }
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.reShuffle();
   }
 
   getAllTodos() {
@@ -34,19 +35,13 @@ class TodoArray {
 
   toggleCompleted(index) {
     this.todos[index - 1].completed = !this.todos[index - 1].completed;
-    for (let i = 0; i < this.todos.length; i += 1) {
-      this.todos[i].id = i + 1;
-    }
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.reShuffle();
   }
 
   clearCompleted() {
     const newArr = this.todos.filter((todo) => !todo.completed);
     this.todos = newArr;
-    for (let i = 0; i < this.todos.length; i += 1) {
-      this.todos[i].id = i + 1;
-    }
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.reShuffle();
   }
 }
 
