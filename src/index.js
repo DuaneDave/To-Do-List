@@ -3,13 +3,10 @@ import TodoArray from './modules/TodoArray.js';
 import TodoItem from './modules/TodoItem.js';
 import popUp from './modules/toast.js';
 
-const form = document.querySelector('form');
-const todoWrapper = document.querySelector('.todo-container');
-const removeCompleted = document.querySelector('button');
-
 const todoArray = new TodoArray();
 
 const renderTodos = () => {
+  const todoWrapper = document.querySelector('.todo-container');
   todoWrapper.innerHTML = '';
   if (todoArray.getAllTodos().length === 0) {
     todoWrapper.innerHTML = '<h3 class= "alert">Todo is Empty</h3>';
@@ -71,16 +68,22 @@ const renderTodos = () => {
     });
   });
 
+  const removeCompleted = document.querySelector('#clear-all');
   removeCompleted.addEventListener('click', () => {
     todoArray.clearCompleted();
-    renderTodos();
     popUp();
+    renderTodos();
   });
 };
 
+const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const todoText = document.querySelector('.input').value;
+  if (!todoText) {
+    return;
+  }
+
   const todo = new TodoItem(
     todoText,
     false,
