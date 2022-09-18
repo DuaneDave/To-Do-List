@@ -20,13 +20,21 @@
 - Clone this repo to your machine by using Git clone: Git clone `https://github.com/DuaneDave/To-Do-List.git`
 - open in your vs code terminal and run live 
 
+### Install
+
+- Install webhint using `npm install --save-dev hint@7.x`
+- Install eslint using `npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x`
+- Install stylelint using `npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x`
+- Install jest using `npm i --save-dev jest`
+- Install jsDom using `npm install --save-dev jest-environment-jsdom-global jest-environment-jsdom`
 
 ### Run tests
 To run tests on this project if you tweaked something, run the following command
 
-- Install jest using `npm i --save-dev jest`
-- Install jsDom using `npm install --save-dev jest-environment-jsdom-global jest-environment-jsdom`
-- run your test using `npm run test`
+- Run your test using `npm run test`
+- Run webhint html checks using `npx hint .`
+- Run webhint Css checks using `npx stylelint "\*_/_.{css,scss}"`
+- Run webhint javascript checks using `npx eslint .`
 
 
 ## Authors 1
