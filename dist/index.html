@@ -11,10 +11,9 @@
     <title>Todo-List</title>
   <script defer src="index.bundle.js"></script></head>
   <body>
-    <h1>todo</h1>
-    <section class="container">
+    <div class="container">
       <div class="header border-bottom flex">
-        <h2>Today's to do</h2>
+        <h1>Today's to do</h1>
         <i class="bx bx-refresh"></i>
       </div>
       <form class="flex border-bottom">
@@ -23,22 +22,19 @@
           type="text"
           name="todo"
           placeholder="Add a todo...."
-          aria-label="Add a todo"
         />
-        <button type="submit" class="submit">
-          <i class="bx bx-subdirectory-left"></i>
-        </button>
+        <i class="bx bx-subdirectory-left"></i>
       </form>
       <div class="todo-container"></div>
       <div class="clear-todos">
-        <button type="button" id="clear-all">Clear All Completed</button>
+        <button type="button">Clear All Completed</button>
       </div>
-    </section>
-    <section id="clear-completed">
+    </div>
+    <div id="clear-completed">
       <div class="clear-completed flex">
-        <i class="bx bx-trash" aria-label="delete todo"></i>
+        <i class="bx bx-trash"></i>
         <h3>All completed todos are removed</h3>
       </div>
-    </section>
+    </div>
   </body>
 </html>
